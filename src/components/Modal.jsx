@@ -9,11 +9,11 @@ export default function Modal() {
         onClick={closeModal}
         className='font-body text-white fixed inset-0 bg-black bg-opacity-80 backdrop:blur-sm flex items-center justify-center'>
         <div
-          className={`bg-${types[0]} p-2 rounded-xl max-w-3xl w-full h-4/6 mx-4 relative`}
+          className={`bg-${types[0]} px-4 rounded-xl max-w-3xl w-full h-[30em] md:h-[35em] lg:h-[40em] mx-4 relative`}
           onClick={(e) => {
             e.stopPropagation();
           }}>
-          <div className='flex items-center justify-center gap-4 mt-16 md:mt-12 lg:mt-8'>
+          <div className='flex items-center justify-center gap-4 mt-16 md:mt-12 lg:mt-16'>
             <div>
               <img
                 className='block max-w-[8rem] md:max-w-[12rem] lg:max-w-[13rem] mx-auto aspect-square'
@@ -70,7 +70,7 @@ export default function Modal() {
                     })}
                   </td>
                 </tr>
-                <tr className='flex gap-2'>
+                <tr className='flex gap-14'>
                   <td>Types</td>
                   <td className='flex gap-1 text-white'>
                     {types.map((type, i) => (
