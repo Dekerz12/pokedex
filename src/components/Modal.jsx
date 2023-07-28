@@ -59,9 +59,9 @@ export default function Modal() {
               </div>
             </div>
           </div>
-          <nav className='absolute inset-x-0 top-2 bottom-8 md:top-0 lg:top-8 lg:bottom-6 flex justify-around mt-14 lg:mt-16'>
+          <nav className='absolute inset-x-0 top-48 md:top-[17.5rem] flex justify-around mt-14 lg:mt-16'>
             <button
-              className={`font-semibold md:text-lg cursor-pointer   ${
+              className={`font-semibold md:text-lg cursor-pointer h-fit  ${
                 active === 'about' ? 'opacity-100' : 'opacity-50'
               }`}
               onClick={() => {
@@ -70,7 +70,7 @@ export default function Modal() {
               About
             </button>
             <button
-              className={`font-semibold md:text-lg cursor-pointer   ${
+              className={`font-semibold md:text-lg cursor-pointer h-fit  ${
                 active === 'stats' ? 'opacity-100' : 'opacity-50'
               }`}
               onClick={() => {
@@ -79,7 +79,10 @@ export default function Modal() {
               Stats
             </button>
           </nav>
-          <div className='w-full bg-white absolute bottom-0 left-0 text-gray-700 rounded-xl p-5 lg:p-8 overflow-scroll max-h-52 md:max-h-60 lg:max-h-64'>
+          <div
+            className={`w-full bg-white absolute bottom-0 left-0 text-gray-700 rounded-xl p-5 lg:p-8 max-h-52 md:max-h-60 lg:max-h-64 ${
+              active === 'stats' ? 'overflow-y-auto ' : ''
+            }`}>
             {active === 'about' ? (
               <PokemonAbout
                 id
