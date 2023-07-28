@@ -28,7 +28,7 @@ export default function Modal() {
         }}
         className='font-body text-white fixed inset-0 bg-black bg-opacity-80 backdrop:blur-sm flex items-center justify-center'>
         <div
-          className={`bg-${types[0]} px-4 rounded-xl max-w-3xl w-full h-[30em] md:h-[34em] lg:h-[40em] mx-4 relative flex flex-col`}
+          className={`relative bg-${types[0]} px-4 rounded-xl max-w-3xl w-full h-[30em] md:h-[34em] lg:h-[40em] mx-4 relative flex flex-col`}
           onClick={(e) => {
             e.stopPropagation();
           }}>
@@ -59,7 +59,7 @@ export default function Modal() {
               </div>
             </div>
           </div>
-          <nav className='flex justify-around mt-14'>
+          <nav className='absolute inset-x-0 top-2 bottom-8 md:top-8 md:bottom-6 flex justify-around mt-14 lg:mt-16'>
             <button
               className={`font-semibold md:text-lg cursor-pointer   ${
                 active === 'about' ? 'opacity-100' : 'opacity-50'
