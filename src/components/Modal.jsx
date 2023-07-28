@@ -32,7 +32,7 @@ export default function Modal() {
           onClick={(e) => {
             e.stopPropagation();
           }}>
-          <div className='flex items-center justify-center gap-4 mt-14 md:mt-10 lg:mt-14'>
+          <div className='flex items-center justify-center gap-12 mt-14 md:-mt-3 lg:mt-14'>
             <div>
               <img
                 className='block max-w-[8rem] md:max-w-[12rem] lg:max-w-[13rem] mx-auto aspect-square'
@@ -59,9 +59,9 @@ export default function Modal() {
               </div>
             </div>
           </div>
-          <nav className='flex justify-around xl:mt-6'>
+          <nav className='flex justify-around mt-14'>
             <button
-              className={`font-semibold md:text-lg cursor-pointer mt-12  ${
+              className={`font-semibold md:text-lg cursor-pointer   ${
                 active === 'about' ? 'opacity-100' : 'opacity-50'
               }`}
               onClick={() => {
@@ -70,7 +70,7 @@ export default function Modal() {
               About
             </button>
             <button
-              className={`font-semibold md:text-lg cursor-pointer mt-12  ${
+              className={`font-semibold md:text-lg cursor-pointer   ${
                 active === 'stats' ? 'opacity-100' : 'opacity-50'
               }`}
               onClick={() => {
