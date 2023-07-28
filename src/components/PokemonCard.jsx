@@ -13,7 +13,7 @@ export default function PokemonCard({ pokemon }) {
             {types.map((type, i) => (
               <div key={id + name + i} className={` max-w-[12em]`}>
                 <h2
-                  className={`inline text-sm font-semibold bg-${type} px-4 py-2 rounded-full text-center w-full capitalize`}>
+                  className={`inline text-sm font-semibold bg-btn_${type} px-4 py-2 rounded-full text-center w-full capitalize`}>
                   {type}
                 </h2>
               </div>

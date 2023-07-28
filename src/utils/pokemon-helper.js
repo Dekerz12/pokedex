@@ -5,7 +5,7 @@ export const formatPokemonData = (pokemon) => {
   const heightInMeter = height / 10 + 'm';
   const formattedTypes = types?.map(({ type }) => type.name);
   const formattedAbilities = abilities.map(({ ability, is_hidden }) => ({
-    name: ability.name,
+    name: removeHyphens(ability.name),
     isHidden: is_hidden,
   }));
   const imgUrl =
@@ -34,7 +34,7 @@ export const formatStats = (stats) => {
     total: 720,
   };
 
-  const formattedStats = stats.map(({ base_stat, stat }) => ({
+  const formattedStats = stats?.map(({ base_stat, stat }) => ({
     name: removeHyphens(stat.name),
     value: base_stat,
     max: statsMaxBaseValues[stat.name],
