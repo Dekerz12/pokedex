@@ -59,7 +59,7 @@ export default function Modal() {
               </div>
             </div>
           </div>
-          <nav className='absolute inset-x-0 top-2 bottom-8 md:top-8 md:bottom-6 flex justify-around mt-14 lg:mt-16'>
+          <nav className='absolute inset-x-0 top-2 bottom-8 md:top-0 lg:top-8 lg:bottom-6 flex justify-around mt-14 lg:mt-16'>
             <button
               className={`font-semibold md:text-lg cursor-pointer   ${
                 active === 'about' ? 'opacity-100' : 'opacity-50'
