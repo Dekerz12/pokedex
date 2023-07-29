@@ -7,7 +7,7 @@ export default function Loader() {
           <img
             key={i}
             src={pokeball}
-            style={{ animationDelay: `${i * 250}ms` }}
+            style={{ animationDelay: `${i * 2000}ms` }}
             className='absolute mx-auto left-0 right-0 opacity-0 aspect-square animate-growAndFade'
             alt=''
           />

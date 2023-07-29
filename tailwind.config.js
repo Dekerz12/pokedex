@@ -46,12 +46,12 @@ export default {
         body: ['Poppins'],
       },
       animation: {
-        growAndFade: 'growAndFade 1s infinite ease-out',
+        growAndFade: 'growAndFade 1.5s infinite ease-out',
       },
       keyframes: {
         growAndFade: {
           '0%': {
-            opacity: '.5',
+            opacity: '.75',
             transform: 'scale(0)',
           },
           '100%': {
