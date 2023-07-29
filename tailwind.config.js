@@ -45,6 +45,21 @@ export default {
       fontFamily: {
         body: ['Poppins'],
       },
+      animation: {
+        growAndFade: 'growAndFade 1s infinite ease-out',
+      },
+      keyframes: {
+        growAndFade: {
+          '0%': {
+            opacity: '.5',
+            transform: 'scale(0)',
+          },
+          '100%': {
+            opacity: '0',
+            transform: 'scale(1)',
+          },
+        },
+      },
     },
   },
   plugins: [

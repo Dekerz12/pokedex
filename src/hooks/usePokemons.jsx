@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { formatPokemonData } from '../utils/pokemon-helper';
 export default function usePokemons(generation) {
-  const { data } = useQuery({
+  const { data, isLoading, isInitialLoading } = useQuery({
     queryKey: ['pokemons', generation],
     queryFn: async () => {
       const { data } = await axios.get(
@@ -23,5 +23,5 @@ export default function usePokemons(generation) {
     },
   });
 
-  return data;
+  return { data, isLoading, isInitialLoading };
 }

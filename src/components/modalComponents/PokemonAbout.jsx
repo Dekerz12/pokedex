@@ -1,11 +1,11 @@
 export default function PokemonAbout({ id, height, weight, abilities, types }) {
   return (
     <>
-      <h1 className={`font-bold text-${types[0]} lg:text-lg mb-2`}>
+      <h1 className={`font-bold text-${types[0]} lg:text-lg mb-1`}>
         Pokedex Data
       </h1>
       <table className='table-auto'>
-        <tbody className='flex flex-col gap-2'>
+        <tbody className='flex flex-col gap-1'>
           <tr className='flex gap-14'>
             <td className='font-semibold'>Height</td>
             <td className='text-gray-500'>{height}</td>

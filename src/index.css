@@ -4,5 +4,5 @@
 @tailwind utilities;
 
 td {
-  @apply md:text-xl;
+  @apply md:text-lg;
 }
