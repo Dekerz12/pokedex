@@ -35,7 +35,7 @@ export default function Modal() {
           <div className='flex items-center justify-center gap-12 mt-14 md:-mt-3 lg:mt-14'>
             <div>
               <img
-                className='block max-w-[8rem] md:max-w-[12rem] lg:max-w-[13rem] mx-auto aspect-square'
+                className='block max-w-[8rem] md:max-w-[12rem] lg:max-w-[13rem] mx-auto aspect-square animate-wiggle'
                 src={imgSrc}
                 alt={name}
               />
