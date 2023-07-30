@@ -8,51 +8,15 @@ export default function Navigation({ onClick }) {
       </h2>
       <div className='text-center'>
         <nav className='font-bold inline-flex flex-wrap justify-center shadow-md mx-4 md:my-6 my-12  '>
-          <NavigationLink
-            onClick={() => onClick('generation-i')}
-            path={'/gen-i'}>
-            I
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-ii')}
-            path={'/gen-ii'}>
-            II
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-iii')}
-            path={'/gen-iii'}>
-            III
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-iv')}
-            path={'/gen-iv'}>
-            IV
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-v')}
-            path={'/gen-v'}>
-            V
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-vi')}
-            path={'/gen-vi'}>
-            VI
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-vii')}
-            path={'/gen-vii'}>
-            VII
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-viii')}
-            path={'/gen-viii'}>
-            VIII
-          </NavigationLink>
-          <NavigationLink
-            onClick={() => onClick('generation-ix')}
-            path={'/gen-ix'}>
-            IX
-          </NavigationLink>
+          <NavigationLink path={'/gen-i'}>I</NavigationLink>
+          <NavigationLink path={'/gen-ii'}>II</NavigationLink>
+          <NavigationLink path={'/gen-iii'}>III</NavigationLink>
+          <NavigationLink path={'/gen-iv'}>IV</NavigationLink>
+          <NavigationLink path={'/gen-v'}>V</NavigationLink>
+          <NavigationLink path={'/gen-vi'}>VI</NavigationLink>
+          <NavigationLink path={'/gen-vii'}>VII</NavigationLink>
+          <NavigationLink path={'/gen-viii'}>VIII</NavigationLink>
+          <NavigationLink path={'/gen-ix'}>IX</NavigationLink>
         </nav>
       </div>
 

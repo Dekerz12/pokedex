@@ -1,9 +1,13 @@
 import usePokemons from '../hooks/usePokemons';
 import PokemonCard from './PokemonCard';
 import Loader from './Loader';
-import pokeball from '/pokeball.png';
+import { useParams } from 'react-router-dom';
+
 export default function PokemonList({ generation }) {
-  const { data, isLoading, isInitialLoading } = usePokemons(generation);
+  const { genId } = useParams();
+  const { data, isLoading, isInitialLoading } = usePokemons(
+    'generation' + genId.slice(3)
+  );
 
   if (isLoading || isInitialLoading) {
     return <Loader />;
