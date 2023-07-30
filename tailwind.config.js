@@ -47,7 +47,7 @@ export default {
       },
       animation: {
         growAndFade: 'growAndFade 1.5s infinite ease-out',
-        wiggle: 'wiggle .8s ',
+        wiggle: 'wiggle .5s ',
         slide: 'slide .25s ease-out',
       },
       keyframes: {
@@ -63,20 +63,20 @@ export default {
         },
         wiggle: {
           '0%, 100%': {
-            transform: 'scale(1.2) rotate(7deg)',
+            transform: 'scale(1) rotate(3deg)',
           },
           '50%': {
-            transform: 'scale(0.8) rotate(-7deg)',
+            transform: 'scale(0.8) rotate(-3deg)',
           },
         },
         slide: {
           '0%': {
-            opacity: '1',
             transform: 'scaleX(0)',
+            transformOrigin: 'left center',
           },
           '100%': {
-            opacity: '1',
             transform: 'scaleX(1)',
+            transformOrigin: 'left center',
           },
         },
       },
