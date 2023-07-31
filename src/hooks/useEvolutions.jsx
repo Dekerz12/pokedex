@@ -3,7 +3,7 @@ import axios from 'axios';
 import { formatEvolution } from '../utils/pokemon-helper';
 export default function useEvolution(species) {
   const pokemonSpeciesUrl = species?.url;
-  const { data, isLoading, isInitialLoading } = useQuery({
+  const { data, isLoading, isInitialLoading, refetch } = useQuery({
     queryKey: ['pokemons', species],
     queryFn: async () => {
       const { data } = await axios.get(pokemonSpeciesUrl);
@@ -11,7 +11,8 @@ export default function useEvolution(species) {
       const { data: evolutions } = await axios.get(evolutionUrl);
       return formatEvolution(evolutions.chain);
     },
+    enabled: false,
   });
 
-  return { data, isLoading, isInitialLoading };
+  return { data, isLoading, isInitialLoading, refetch };
 }

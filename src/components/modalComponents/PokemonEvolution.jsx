@@ -1,8 +1,7 @@
-import useEvolution from '../../hooks/useEvolutions';
 import Loader from '../Loader';
 
 export default function PokemonEvolution({ evolution }) {
-  const { data, isLoading, isInitialLoading } = useEvolution(evolution);
+  const { data, isLoading, isInitialLoading } = evolution;
 
   if (isInitialLoading || isLoading) {
     return (

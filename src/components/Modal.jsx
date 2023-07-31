@@ -4,7 +4,7 @@ import PokemonAbout from './modalComponents/PokemonAbout';
 import { formatStats } from '../utils/pokemon-helper';
 import PokemonStats from './modalComponents/PokemonStats';
 import PokemonEvolution from './modalComponents/PokemonEvolution';
-
+import useEvolution from '../hooks/useEvolutions';
 export default function Modal() {
   const { isModalOpen, closeModal, currentPokemon } = usePokemonContext();
   const [active, setActive] = useState('about');
@@ -20,7 +20,7 @@ export default function Modal() {
     stats,
     species,
   } = currentPokemon;
-
+  const evolution = useEvolution(species);
   if (isModalOpen)
     return (
       <div
@@ -86,6 +86,7 @@ export default function Modal() {
               }`}
               onClick={() => {
                 setActive('evolution');
+                evolution.refetch();
               }}>
               Evolutions
             </button>
@@ -107,7 +108,7 @@ export default function Modal() {
             ) : active === 'stats' ? (
               <PokemonStats stats={formatStats(stats)} types={types} />
             ) : (
-              <PokemonEvolution evolution={species} />
+              <PokemonEvolution evolution={evolution} />
             )}
           </div>
         </div>
