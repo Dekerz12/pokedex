@@ -878,4 +878,27 @@ function normalizeEvolutionChain({ species, evolves_to }) {
   }
 }
 //
+
 console.log(normalizeEvolutionChain(data4));
+
+const evolutionRepeat = normalizeEvolutionChain(data4)
+  .filter((evolution) => !Array.isArray(evolution))
+  .map((evolution) => evolution);
+
+const index = normalizeEvolutionChain(data4).findIndex((elem) =>
+  Array.isArray(elem)
+);
+console.log(normalizeEvolutionChain(data4)[index]);
+if (index !== -1) {
+  console.log(
+    normalizeEvolutionChain(data4)[index]?.map((evolution) =>
+      !Array.isArray(evolution)
+        ? [...evolutionRepeat, evolution]
+        : Array.isArray(evolution)
+        ? [evolutionRepeat, evolution.map((evo) => evo)].flat()
+        : [...evolutionRepeat, evolution]
+    )
+  );
+} else {
+  console.log(normalizeEvolutionChain(data4).map((evolution) => evolution));
+}
