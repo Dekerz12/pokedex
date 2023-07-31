@@ -108,7 +108,7 @@ export default function Modal() {
             ) : active === 'stats' ? (
               <PokemonStats stats={formatStats(stats)} types={types} />
             ) : (
-              <PokemonEvolution evolution={evolution} />
+              <PokemonEvolution evolution={{ ...evolution, name: name }} />
             )}
           </div>
         </div>
