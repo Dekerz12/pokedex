@@ -30,11 +30,11 @@ export default function Modal() {
         }}
         className='font-body text-white fixed inset-0 bg-black bg-opacity-80 backdrop:blur-sm flex items-center justify-center'>
         <div
-          className={`relative bg-${types[0]} px-4 rounded-xl max-w-3xl w-full h-[30em] md:h-[34em] lg:h-[40em] mx-4 relative flex flex-col`}
+          className={`relative bg-${types[0]} px-4 rounded-xl max-w-3xl w-full h-[30em] md:h-[38em] lg:h-[40em] mx-4 relative flex flex-col`}
           onClick={(e) => {
             e.stopPropagation();
           }}>
-          <div className='flex items-center justify-center gap-12 mt-14 md:-mt-3 lg:mt-14'>
+          <div className='flex items-center justify-center gap-12 mt-14'>
             <div>
               <img
                 className='block max-w-[8rem] md:max-w-[12rem] lg:max-w-[13rem] mx-auto aspect-square animate-wiggle'
@@ -92,7 +92,9 @@ export default function Modal() {
           </nav>
           <div
             className={`w-full h-52 bg-white absolute bottom-0 left-0 text-gray-700 rounded-xl p-5 lg:p-8 max-h-64 md:h-60 lg:h-64 ${
-              active === 'stats' ? 'overflow-y-auto ' : ''
+              active === 'stats' || active === 'evolution'
+                ? 'overflow-y-auto '
+                : ''
             }`}>
             {active === 'about' ? (
               <PokemonAbout
