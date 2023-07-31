@@ -1,12 +1,16 @@
 import { usePokemonContext } from '../context/PokemonContext';
+
 export default function PokemonCard({ pokemon }) {
-  const { id, paddedId, name, types, imgSrc } = pokemon;
+  const { id, paddedId, name, types, imgSrc, species } = pokemon;
   const { openModal } = usePokemonContext();
+
   return (
     <>
       <div
         className={`p-4 text-white bg-${types[0]} bg-opacity-80 flex rounded-2xl gap-4 md:gap-12 items-center justify-center shadow-sm h-52 relative transform hover:scale-105 transition ease-out duration-300`}
-        onClick={() => openModal(pokemon)}>
+        onClick={() => {
+          openModal(pokemon);
+        }}>
         <div className='flex flex-col gap-4 self-center'>
           <h1 className='text-xl font-bold capitalize'>{name}</h1>
           <div className='flex flex-col gap-4 '>

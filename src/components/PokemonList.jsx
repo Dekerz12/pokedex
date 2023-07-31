@@ -10,7 +10,7 @@ export default function PokemonList({ generation }) {
   );
 
   if (isLoading || isInitialLoading) {
-    return <Loader />;
+    return <Loader size={80} />;
   }
 
   return (

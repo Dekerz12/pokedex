@@ -3,6 +3,7 @@ import { usePokemonContext } from '../context/PokemonContext';
 import PokemonAbout from './modalComponents/PokemonAbout';
 import { formatStats } from '../utils/pokemon-helper';
 import PokemonStats from './modalComponents/PokemonStats';
+import PokemonEvolution from './modalComponents/PokemonEvolution';
 
 export default function Modal() {
   const { isModalOpen, closeModal, currentPokemon } = usePokemonContext();
@@ -17,6 +18,7 @@ export default function Modal() {
     weight,
     abilities,
     stats,
+    species,
   } = currentPokemon;
 
   if (isModalOpen)
@@ -78,9 +80,18 @@ export default function Modal() {
               }}>
               Stats
             </button>
+            <button
+              className={`font-semibold md:text-lg cursor-pointer h-fit  ${
+                active === 'evolution' ? 'opacity-100' : 'opacity-50'
+              }`}
+              onClick={() => {
+                setActive('evolution');
+              }}>
+              Evolutions
+            </button>
           </nav>
           <div
-            className={`w-full bg-white absolute bottom-0 left-0 text-gray-700 rounded-xl p-5 lg:p-8 max-h-52 md:max-h-60 lg:max-h-64 ${
+            className={`w-full h-52 bg-white absolute bottom-0 left-0 text-gray-700 rounded-xl p-5 lg:p-8 max-h-64 md:h-60 lg:h-64 ${
               active === 'stats' ? 'overflow-y-auto ' : ''
             }`}>
             {active === 'about' ? (
@@ -91,8 +102,10 @@ export default function Modal() {
                 abilities={abilities}
                 types={types}
               />
-            ) : (
+            ) : active === 'stats' ? (
               <PokemonStats stats={formatStats(stats)} types={types} />
+            ) : (
+              <PokemonEvolution evolution={species} />
             )}
           </div>
         </div>
