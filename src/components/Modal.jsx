@@ -28,7 +28,7 @@ export default function Modal() {
           closeModal();
           setActive('about');
         }}
-        className='font-body text-white fixed inset-0 bg-black bg-opacity-80 backdrop:blur-sm flex items-center justify-center'>
+        className='font-body text-white fixed inset-0 bg-black bg-opacity-80 backdrop:blur-sm flex items-center justify-center overflow-hidden'>
         <div
           className={`relative bg-${types[0]} px-4 rounded-xl max-w-3xl w-full h-[30em] md:h-[38em] lg:h-[40em] mx-4 relative flex flex-col`}
           onClick={(e) => {
@@ -91,7 +91,7 @@ export default function Modal() {
             </button>
           </nav>
           <div
-            className={`w-full h-52 bg-white absolute bottom-0 left-0 text-gray-700 rounded-xl p-5 lg:p-8 max-h-64 md:h-60 lg:h-64 ${
+            className={`w-full h-52 bg-white absolute bottom-0 left-0 text-gray-700 rounded-xl p-5 lg:p-8 max-h-64 md:h-60 lg:h-64  ${
               active === 'stats' || active === 'evolution'
                 ? 'overflow-y-auto '
                 : ''
