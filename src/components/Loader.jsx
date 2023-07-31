@@ -8,7 +8,7 @@ export default function Loader({ size }) {
             key={i}
             src={pokeball}
             style={{ animationDelay: `${i * 2000}ms` }}
-            className={`w-${size} absolute mx-auto left-0 right-0 opacity-0 aspect-square animate-growAndFade w-`}
+            className={`w-${size} absolute mx-auto left-0 right-0 opacity-0 aspect-square animate-growAndFade`}
             alt=''
           />
         );
