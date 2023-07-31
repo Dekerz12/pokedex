@@ -11,22 +11,29 @@ export default function PokemonEvolution({ evolution }) {
       </div>
     );
   }
-  if (data[0].name === 'eevee') {
+  if (data[0]?.name === 'eevee') {
     eeveeEvolutions = data.map((pokemon, i) => {
       if (pokemon.name === 'eevee') {
         return data[i + 1];
       }
     });
+    eeveeEvolutions = eeveeEvolutions.filter(
+      (pokemon) => pokemon !== undefined
+    );
   }
-  eeveeEvolutions = eeveeEvolutions.filter((pokemon) => pokemon !== undefined);
+
   const eeveeEvolutionId = eeveeEvolutions.findIndex(
     (name) => name.name === evolution.name
   );
-  console.log(eeveeEvolutions[eeveeEvolutionId]);
+  console.log(data);
+
   return (
     <div
       className={`grid ${
-        data[0].name === 'eevee' || data?.length === 2
+        data[0]?.name === 'eevee' ||
+        data[0]?.name === 'slowpoke' ||
+        data[0]?.name === 'tyrogue' ||
+        data?.length === 2
           ? 'grid-cols-2'
           : data?.length > 2
           ? 'grid-cols-3'
