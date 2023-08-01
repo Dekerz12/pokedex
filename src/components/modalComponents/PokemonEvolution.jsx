@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Loader from "../Loader";
 
 export default function PokemonEvolution({ evolution }) {
@@ -12,11 +11,10 @@ export default function PokemonEvolution({ evolution }) {
     );
   }
 
-  console.log(data);
   return (
     <div
       className={`grid ${
-        data?.length === 8 ||
+        data?.length > 3 ||
         data[0]?.length === 2 ||
         data[1]?.length === 2 ||
         (data?.length === 2 && !Array.isArray(data[0]))
