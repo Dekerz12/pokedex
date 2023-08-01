@@ -39,7 +39,7 @@ export default function PokemonCard({ pokemon }) {
         <div className="absolute w-full -top-2">
           <div className="">
             <img
-              className="absolute w-56 text-water opacity-20 left-12 -z-20"
+              className="absolute w-56 text-water opacity-20 -z-20 left-0 right-0  mx-auto"
               src="https://www.shareicon.net/data/512x512/2016/10/18/844160_game_512x512.png"
               alt=""
             />
