@@ -12,7 +12,7 @@ export default function PokemonEvolution({ evolution }) {
     );
   }
 
-  console.log();
+  console.log(data);
   return (
     <div
       className={`grid ${
@@ -31,13 +31,17 @@ export default function PokemonEvolution({ evolution }) {
       ) : Array.isArray(data[0]) ? (
         data
           ?.filter((pokemon, i) => {
-            if (evolution.name === "eevee") {
-              return true;
-            }
             if (pokemon.length === 3) {
               return pokemon.some((poke) => poke.name === evolution.name);
+            } else if (
+              evolution.name === "eevee" ||
+              (data.length === 2 &&
+                pokemon.some((poke) => poke.name === evolution.name))
+            ) {
+              return true;
+            } else {
+              return pokemon[1].name === evolution.name;
             }
-            return pokemon[1].name === evolution.name;
           })
           ?.map((evolution) => {
             return evolution.map(({ name, image }) => {
